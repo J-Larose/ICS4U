@@ -1,9 +1,3 @@
-//added to try and update local to match this
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sortingwork;
 import java.util.Random;
 /**
@@ -11,80 +5,89 @@ import java.util.Random;
  * @author Jacob Larose
  */
 public class SortingWork {
-    
-    
-    public static void main(String args[]) throws Exception
-    {
+    /**
+     * 
+     * @param args
+     * @throws Exception 
+     */
+    public static void main(String args[]) throws Exception {
         /**
          * create 2 int list 2 arrays for sorting with 2 methods
          */
-       int listLenth;
-       listLenth = (int) ((Math.random()*20)+20);
-       int[] list = new int[listLenth];
-       int[] list2= new int[listLenth];
-       
-       /**
-        * randomly populate int list 2 arrays setting them equal to each other
-        */
-       for(int i=0; i<listLenth; i++){
-           int j= (int) (Math.floor(Math.random()*101));
-           list[i]=j;
-       }
-       
-       list2 = list;
-       /**
-        * create char list 2 array 
-       */
-       char[] list3= new char[listLenth];
-       
-       /**
-        * randomly populate char list 2 array
-       */
-       for(int i=0; i<listLenth; i++){
-           Random r = new Random();
-           char c = (char)(r.nextInt(26) + 'a');
-           
-           list3[i]=c;
-       }
-       /**
-        * print original int list 2 array
-        */
-       System.out.println("list");
-       
-       for (int x : list){
-           System.out.print (x+" ");
-       }
-       
-       System.out.println();
-       /**
-        * sort with merge sort function then print merge sorted list 2 array
-        */
-       mergeSort(list);
-       System.out.println("merge sorted");
-       
-       for (int x : list){
-           System.out.print (x+" ");
-       }
-       System.out.println();
-       
-       countSort(list2);
-       
-       System.out.println("count sorted");
-       
-       for (int x : list2){
-           System.out.print (x+" ");
-       }
-       System.out.println();
-       
-       /** 
-        * print original char list 2 array
-        */
-       for(int i=0; i<listLenth; i++){
-           System.out.print(list3[i]+" ");
-       }
-       
-       
-       
+        int listLenth;
+        listLenth = (int) ((Math.random() * 20) + 20);
+        int[] list = new int[listLenth];
+        int[] list2 = new int[listLenth];
+
+        /**
+         * randomly populate int list 2 arrays setting them equal to each other
+         */
+        for (int i = 0; i < listLenth; i++) {
+            int j = (int) (Math.floor(Math.random() * 101));
+            list[i] = j;
+        }
+
+        list2 = list;
+        /**
+         * create char array
+         */
+        char[] list3 = new char[listLenth];
+
+        /**
+         * randomly populate char array
+         */
+        for (int i = 0; i < listLenth; i++) {
+            Random r = new Random();
+            char c = (char) (r.nextInt(26) + 'a');
+
+            list3[i] = c;
+        }
+        /**
+         * print original int array
+         */
+        System.out.println("list");
+
+        for (int x : list) {
+            System.out.print(x + " ");
+        }
+
+        System.out.println();
+        /**
+         * sort with merge sort function then print merge sorted array
+         */
+        mergeSort(list);
+
+        System.out.println("merge sorted");
+        for (int x : list) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+
+        /**
+         * sort with count sort then print sorted list
+         */
+        countSort(list2);
+
+        System.out.println("count sorted");
+
+        for (int x : list2) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+
+        /**
+         * print original char list 2 array, sort and print sorted
+         */
+        System.out.println("char array");
+        for (int i = 0; i < listLenth; i++) {
+            System.out.print(list3[i] + " ");
+        }
+        System.out.println();
+        bubbleSort(list3);
+        System.out.println("sorted");
+        for (int i = 0; i < listLenth; i++) {
+            System.out.print(list3[i] + " ");
+        }
     }
     /**
      * 
@@ -142,7 +145,10 @@ public class SortingWork {
         System.arraycopy(first, iFirst, result, j, first.length - iFirst);
         System.arraycopy(second, iSecond, result, j, second.length - iSecond);
     }
-    
+    /**
+     * 
+     * @param list2 
+     */
     public static void countSort(int[] list2) {
         int N = list2.length;
         if (N == 0) {
@@ -185,4 +191,35 @@ public class SortingWork {
             }
         }
     }
+    /**
+     * 
+     * @param list3
+     * @return 
+     */
+    public static char[] bubbleSort (char[] list3){
+        int list3int[] =new int[list3.length];
+        
+        for (int i=0; i<list3.length; i++){
+            list3int[i] = (int) list3[i];
+        }
+        
+        int n, c, d, swap;
+        n=list3int.length;
+        for (c = 0; c < (n - 1); c++) {
+            for (d = 0; d < n - c - 1; d++) {
+                if (list3int[d] > list3int[d + 1]) /* For descending order use < */ {
+                    swap = list3int[d];
+                    list3int[d] = list3int[d + 1];
+                    list3int[d + 1] = swap;
+                }
+            }
+        }
+        
+        for (int i=0; i<list3.length; i++){
+            list3[i] = (char) list3int[i];
+        }
+        
+        return list3;
+        
+    }   
 }
