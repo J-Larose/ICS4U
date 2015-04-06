@@ -26,13 +26,23 @@ public class SwingPractice {
 //        System.out.println(i);
         while (valid == false) {
             try {
-                System.out.println("enter a thing");
-                int x = input.nextInt();
-                break;  
-            } catch (InputMismatchException x) {
-                System.out.println("not valid try again");
+                String x = input.nextLine();
+                Integer.parseInt(x);
+                System.out.println("good");
+                break;
                 
+            } catch (NumberFormatException x) {
+                System.out.println("not valid try again");
             }
+            
+//            try {
+//                System.out.println("enter a thing");
+//                int x = input.nextInt();
+//                break;  
+//            } catch (InputMismatchException x) {
+//                System.out.println("not valid try again");
+//                
+//            }
         }
         
     }
