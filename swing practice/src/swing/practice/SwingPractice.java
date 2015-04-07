@@ -24,6 +24,7 @@ public class SwingPractice {
         
 //        int i=1/0;
 //        System.out.println(i);
+        
         while (valid == false) {
             try {
                 String x = input.nextLine();
