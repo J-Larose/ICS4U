@@ -25,11 +25,12 @@ public class AlgoritmPractice {
         boolean tryAgain =false;
         Scanner input= new Scanner(System.in);
         
-        int tries=0;
+        
         do {
+            int tries=0;
             int point = (int) ((Math.random() * 6) );
             System.out.println ("point "+point);
-            roll(point, tries);
+            tries = roll(point, tries);
             
             triesList.add(tries);
             
@@ -78,5 +79,4 @@ public class AlgoritmPractice {
         }
         return tries;
     }
-    
 }
