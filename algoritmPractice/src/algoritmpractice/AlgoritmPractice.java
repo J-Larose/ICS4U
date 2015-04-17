@@ -69,6 +69,7 @@ public class AlgoritmPractice {
         int i=0;
         if (point==number){
             System.out.println("first try");
+            tries=tries+1;
         }
         while (point!=number){
             number = (int) ((Math.random() * 6));

@@ -7,7 +7,7 @@ package searchingandrecusion;
 
 /**
  *
- * @author Administrator
+ * @author Jacob Larose
  */
 public class SearchingAndRecusion {
 
@@ -15,7 +15,7 @@ public class SearchingAndRecusion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
